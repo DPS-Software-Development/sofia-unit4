@@ -3,29 +3,29 @@
 // Multi-utente: ogni nome ha le sue stats/stelle isolate (localStorage namespaceato)
 
 const app = document.getElementById('app');
-const APP_VERSION = 'v3';
+const APP_VERSION = 'v4';
 
 // ===== Multi-user =====
 function sanitizeName(s) {
   return String(s || '').trim().replace(/\s+/g, ' ').slice(0, 24);
 }
 function getCurrentUser() {
-  return sanitizeName(localStorage.getItem('sofia_u4_current_user') || '');
+  return sanitizeName(localStorage.getItem('english_u4_current_user') || '');
 }
 function setCurrentUser(name) {
   const clean = sanitizeName(name);
   if (!clean) return false;
-  localStorage.setItem('sofia_u4_current_user', clean);
+  localStorage.setItem('english_u4_current_user', clean);
   const list = getUserList();
   if (!list.includes(clean)) {
     list.push(clean);
-    localStorage.setItem('sofia_u4_users', JSON.stringify(list));
+    localStorage.setItem('english_u4_users', JSON.stringify(list));
   }
   return true;
 }
 function getUserList() {
   try {
-    const raw = localStorage.getItem('sofia_u4_users');
+    const raw = localStorage.getItem('english_u4_users');
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed.map(sanitizeName).filter(Boolean) : [];
@@ -36,11 +36,11 @@ function userSlug(name) {
 }
 function statsKey() {
   const u = getCurrentUser();
-  return u ? `sofia_u4_stats__${userSlug(u)}` : 'sofia_u4_stats';
+  return u ? `english_u4_stats__${userSlug(u)}` : 'english_u4_stats';
 }
 function starsKey() {
   const u = getCurrentUser();
-  return u ? `sofia_u4_stars__${userSlug(u)}` : 'sofia_u4_stars';
+  return u ? `english_u4_stars__${userSlug(u)}` : 'english_u4_stars';
 }
 
 // ===== State =====
@@ -264,7 +264,7 @@ function renderWelcome() {
 function switchUser() {
   cancelPending();
   // Mantieni l'utente corrente in lista, ma forza la welcome screen
-  localStorage.removeItem('sofia_u4_current_user');
+  localStorage.removeItem('english_u4_current_user');
   reloadUserState();
   renderWelcome();
 }

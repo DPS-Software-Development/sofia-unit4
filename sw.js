@@ -1,7 +1,7 @@
 // Network-first cache for Unit 4 English app
 // Strategy: bypass anche HTTP cache del browser (cache:'no-store') così quiz/data
 // freschi appena online. Fallback su cache SW solo se offline.
-const CACHE = 'sofia-u4-v3';
+const CACHE = 'english-u4-v4';
 const ASSETS = ['./', 'index.html', 'style.css', 'app.js', 'data.js', 'manifest.json', 'icon.svg'];
 
 self.addEventListener('install', e => {
