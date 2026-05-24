@@ -1,0 +1,14 @@
+{
+  "name": "English Adventure — Unit 4",
+  "short_name": "English U4",
+  "description": "Ripasso interattivo di Unit 4 (Hello World, Classe 5) — Going shopping.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#7c3aed",
+  "background_color": "#fef3c7",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
