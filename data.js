@@ -21,7 +21,13 @@ const TOPICS = {
       { en: "medicine", it: "medicina", emoji: "💉" },
       { en: "bread", it: "pane", emoji: "🍞" },
       { en: "magazine", it: "rivista", emoji: "📖" },
-      { en: "skirt", it: "gonna", emoji: "👗" }
+      { en: "skirt", it: "gonna", emoji: "👗" },
+      { en: "headphones", it: "cuffie", emoji: "🎧" },
+      { en: "sandals", it: "sandali", emoji: "👡" },
+      { en: "boardgame", it: "gioco da tavolo", emoji: "🎲" },
+      { en: "fridge", it: "frigorifero", emoji: "🧊" },
+      { en: "t-shirt", it: "maglietta", emoji: "👕" },
+      { en: "tablet", it: "tablet", emoji: "📱" }
     ]
   },
   containers: {
@@ -86,6 +92,8 @@ const QUIZ = [
   { q: "Cosa significa 'stationer's'? (p.78)", options: ["cartoleria", "farmacia", "panetteria", "negozio di scarpe"], correct: 0, tag: "Shops" },
   { q: "Read p.78: 'Where can I buy Lego bricks?' — Risposta corretta? (p.78)", options: ["At the baker's.", "At the chemist's.", "At the toy shop.", "At the greengrocer's."], correct: 2, tag: "Shops" },
   { q: "Come si dice 'panetteria' in inglese? (p.78)", options: ["baker's", "shoe shop", "toy shop", "newsagent's"], correct: 0, tag: "Shops" },
+  { q: "Cosa significa 'convenient' in italiano? (p.88)", options: ["scomodo", "comodo", "costoso", "veloce"], correct: 1, tag: "Shops" },
+  { q: "Read p.88: 'Online shopping is like a magical ___ on the computer.' Quale parola completa?", options: ["world", "shop", "garden", "library"], correct: 0, tag: "Shops" },
 
   // ===== CONTAINERS (7) =====
   { q: "Come si dice 'un pacchetto di pasta' in inglese? (p.74)", options: ["a bag of pasta", "a packet of pasta", "a tin of pasta", "a jar of pasta"], correct: 1, tag: "Containers" },
@@ -101,7 +109,7 @@ const QUIZ = [
   { q: "Quale è la domanda corretta per chiedere il prezzo di PIÙ oggetti? (p.80)", options: ["How much is it?", "How much are they?", "How many is they?", "How much is they?"], correct: 1, tag: "Money" },
   { q: "Completa: 'Can I ___ a Coke, please?' (p.83)", options: ["have", "has", "having", "had"], correct: 0, tag: "Money" },
   { q: "Cosa significa 'pocket money'? (p.82)", options: ["resto", "paghetta", "sconto", "contanti"], correct: 1, tag: "Money" },
-  { q: "Come si dice 'risparmiare' in inglese? (p.82)", options: ["earn", "waste", "save", "spend"], correct: 2, tag: "Money" },
+  { q: "Come si dice 'risparmiare' in inglese? (p.82)", options: ["earn", "waste", "save", "free"], correct: 2, tag: "Money" },
   { q: "Cosa significa 'Anything else?' detto dal commesso? (p.81)", options: ["Grazie!", "Qualcos'altro?", "Quanto costa?", "Ecco a te."], correct: 1, tag: "Money" }
 ];
 
@@ -114,6 +122,8 @@ const FILL_GAP = [
   { sentence: "Where can I buy bread? At the ___ . (p.78)", choices: ["clothes shop", "baker's", "toy shop"], correct: 1, topic: "Shops" },
   { sentence: "Where can I buy a box of coloured pencils? At the ___ . (p.78)", choices: ["stationer's", "chemist's", "greengrocer's"], correct: 0, topic: "Shops" },
   { sentence: "Where can I buy a kilo of potatoes? At the ___ . (p.78)", choices: ["toy shop", "greengrocer's", "newsagent's"], correct: 1, topic: "Shops" },
+  { sentence: "Read p.88: 'You can explore the ___, touch the toys.'", choices: ["aisles", "fridges", "tablets"], correct: 0, topic: "Shops" },
+  { sentence: "Read p.88: 'Sometimes you might find special deals or ___.'", choices: ["adventures", "discounts", "computers"], correct: 1, topic: "Shops" },
 
   // ===== CONTAINERS (6) =====
   { sentence: "Read p.74: 'a packet of ___'.", choices: ["pasta", "milk", "oil"], correct: 0, topic: "Containers" },
@@ -129,7 +139,10 @@ const FILL_GAP = [
   { sentence: "Read p.83: 'Can I ___ a kilo of potatoes, please?'", choices: ["buy", "have", "having"], correct: 1, topic: "Money" },
   { sentence: "Read p.88: 'Excuse ___, how much is the mug?'", choices: ["me", "you", "my"], correct: 0, topic: "Money" },
   { sentence: "Read p.93: 'How much is it ___?' (=in totale)", choices: ["altogether", "anything", "else"], correct: 0, topic: "Money" },
-  { sentence: "Read p.88: 'Here you are. ___ else?'", choices: ["Anything", "Something", "Nothing"], correct: 0, topic: "Money" }
+  { sentence: "Read p.88: 'Here you are. ___ else?'", choices: ["Anything", "Something", "Nothing"], correct: 0, topic: "Money" },
+  { sentence: "Read p.83: 'Mum, can we ___ to the park, please?'", choices: ["go", "going", "goes"], correct: 0, topic: "Money" },
+  { sentence: "Read p.83: 'Sally, can I ___ your red pen, please?'", choices: ["have", "borrow", "give"], correct: 1, topic: "Money" },
+  { sentence: "Read p.83: 'Mark, can you ___ a bag of flour, please?'", choices: ["buy", "want", "see"], correct: 0, topic: "Money" }
 ];
 
 // TRUE_FALSE: 15 affermazioni vero/falso. Zero hint nelle parentesi (solo p.XX).
@@ -140,6 +153,8 @@ const TRUE_FALSE = [
   { s: "'toy shop' significa 'negozio di giocattoli'. (p.78)", correct: true, tag: "Shops" },
   { s: "'newsagent's' significa 'farmacia'. (p.78)", correct: false, tag: "Shops" },
   { s: "'stationer's' significa 'cartoleria'. (p.78)", correct: true, tag: "Shops" },
+  { s: "'convenient' significa 'scomodo'. (p.88)", correct: false, tag: "Shops" },
+  { s: "'discount' significa 'sconto'. (p.88)", correct: true, tag: "Shops" },
 
   // ===== CONTAINERS (5) =====
   { s: "'a packet of pasta' si traduce 'un pacchetto di pasta'. (p.74)", correct: true, tag: "Containers" },
@@ -178,7 +193,7 @@ const SEQUENCE = [
   },
   {
     prompt: "Metti in ordine la richiesta al banco (p.83):",
-    items: ["Can I have a kilo of potatoes, please?", "I'm sorry, I haven't got potatoes today."],
+    items: ["Excuse me,", "can I have a kilo of potatoes, please?", "I'm sorry, I haven't got potatoes today.", "OK, thank you anyway!"],
     tag: "Containers"
   },
 
@@ -200,11 +215,40 @@ const SEQUENCE = [
   }
 ];
 
-// MATCHING: pool da cui peschiamo 6 coppie random
+// MATCHING: pool curato a mano con emoji univoci (1:1 emoji↔parola).
+// Escluse: frasi con ❓ duplicato, doppioni come clothes shop/t-shirt (👕),
+// a packet of/a box of (📦), money/cash (💵), coin/penny/cent (🪙).
 const MATCHING_POOL = [
-  ...TOPICS.shops.items.slice(0, 10),
-  ...TOPICS.containers.items.slice(0, 10),
-  ...TOPICS.money.items.slice(0, 10)
+  { en: "shoe shop", it: "negozio di scarpe", emoji: "👟" },
+  { en: "chemist's", it: "farmacia", emoji: "💊" },
+  { en: "toy shop", it: "negozio di giocattoli", emoji: "🧸" },
+  { en: "greengrocer's", it: "fruttivendolo", emoji: "🥬" },
+  { en: "newsagent's", it: "edicola", emoji: "📰" },
+  { en: "stationer's", it: "cartoleria", emoji: "✏️" },
+  { en: "baker's", it: "panetteria", emoji: "🥖" },
+  { en: "electronics store", it: "negozio elettronica", emoji: "💻" },
+  { en: "supermarket", it: "supermercato", emoji: "🛒" },
+  { en: "headphones", it: "cuffie", emoji: "🎧" },
+  { en: "sandals", it: "sandali", emoji: "👡" },
+  { en: "boardgame", it: "gioco da tavolo", emoji: "🎲" },
+  { en: "fridge", it: "frigorifero", emoji: "🧊" },
+  { en: "tablet", it: "tablet", emoji: "📱" },
+  { en: "a bottle of", it: "una bottiglia di", emoji: "🍾" },
+  { en: "a can of", it: "una lattina di", emoji: "🥤" },
+  { en: "a jar of", it: "un vasetto di", emoji: "🍯" },
+  { en: "a carton of", it: "un cartone di", emoji: "🥛" },
+  { en: "a kilo of", it: "un chilo di", emoji: "⚖️" },
+  { en: "a tin of", it: "una scatoletta di", emoji: "🥫" },
+  { en: "a bag of", it: "un sacchetto di", emoji: "🛍️" },
+  { en: "pasta", it: "pasta", emoji: "🍝" },
+  { en: "tuna", it: "tonno", emoji: "🐟" },
+  { en: "strawberries", it: "fragole", emoji: "🍓" },
+  { en: "tomatoes", it: "pomodori", emoji: "🍅" },
+  { en: "banknote", it: "banconota", emoji: "💴" },
+  { en: "price", it: "prezzo", emoji: "🏷️" },
+  { en: "pound", it: "sterlina", emoji: "💷" },
+  { en: "euro", it: "euro", emoji: "💶" },
+  { en: "credit card", it: "carta di credito", emoji: "💳" }
 ];
 
 const FUN_FACTS = [

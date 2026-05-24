@@ -3,7 +3,7 @@
 // Multi-utente: ogni nome ha le sue stats/stelle isolate (localStorage namespaceato)
 
 const app = document.getElementById('app');
-const APP_VERSION = 'v1';
+const APP_VERSION = 'v2';
 
 // ===== Multi-user =====
 function sanitizeName(s) {
@@ -227,7 +227,7 @@ function renderWelcome() {
     <div class="welcome">
       <div class="welcome-emoji">🇬🇧</div>
       <h1>English Adventure</h1>
-      <p class="welcome-sub">Unit 5 — Bath, here we come!</p>
+      <p class="welcome-sub">Unit 4 — Going shopping!</p>
       <div class="welcome-card">
         <label for="userInput" class="welcome-label">Come ti chiami?</label>
         <input id="userInput" type="text" inputmode="text" autocomplete="off" autocapitalize="words"
@@ -284,7 +284,7 @@ function renderHome() {
         <div class="user-greet">Hi <strong>${escape(name)}</strong>! 👋</div>
         <button class="user-switch" id="userSwitch" aria-label="Cambia utente">👤 Cambia</button>
       </div>
-      <p>Unit 5 — Bath, here we come!</p>
+      <p>Unit 4 — Going shopping!</p>
       <div class="stars">⭐ ${state.stars} stelle · 📝 ${totAttempts} risposte</div>
     </div>
     <div class="tile-grid six">
@@ -353,7 +353,7 @@ function renderHome() {
 }
 
 // ===== Screen: Flashcards =====
-const flashState = { topic: 'places', idx: 0, flipped: false };
+const flashState = { topic: 'shops', idx: 0, flipped: false };
 
 function renderFlashcards() {
   cancelPending();
